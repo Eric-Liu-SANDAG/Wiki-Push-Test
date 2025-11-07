@@ -4,7 +4,7 @@ on:
     branches: [main]
     paths:
       - wiki/**
-      - .github/workflows/publish-wiki.yml
+      - .github/workflows/wiki-update.yml
 concurrency:
   group: publish-wiki
   cancel-in-progress: true
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: Andrew-Chen-Wang/github-wiki-action@v4
+      - uses: Andrew-Chen-Wang/github-wiki-action@v5
         with:
           strategy: clone
           preprocess: true
